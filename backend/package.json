@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@protobuf-ts/plugin": "^2.9.4",
+    "google-protobuf": "^3.21.2"
+  }
+}

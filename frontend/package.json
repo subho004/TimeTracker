@@ -8,12 +8,17 @@
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "generate-proto": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:src/generated --grpc-web_out=import_style=commonjs,mode=grpcwebtext:src/generated --plugin=protoc-gen-grpc-web=./node_modules/.bin/protoc-gen-grpc-web timeseries.proto"
+    "generate-proto": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:src/generated --grpc-web_out=import_style=commonjs,mode=grpcwebtext:src/generated --plugin=protoc-gen-grpc-web=./node_modules/.bin/protoc-gen-grpc-web timeseries.proto",
+    "gen-proto": "protoc -I=. timeseries.proto --ts_out=src/generated"
   },
   "dependencies": {
+    "@grpc/grpc-js": "^1.10.9",
     "@grpc/proto-loader": "^0.7.13",
     "@improbable-eng/grpc-web": "^0.15.0",
+    "@protobuf-ts/runtime-rpc": "^2.9.4",
     "axios": "^1.7.2",
+    "grpc-tools": "^1.12.4",
+    "grpc-web": "^1.5.0",
     "highcharts": "^11.4.3",
     "highcharts-react-official": "^3.2.1",
     "protoc-gen-grpc": "^2.0.4",
@@ -31,8 +36,6 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "google-protobuf": "^3.21.2",
-    "grpc-tools": "^1.12.4",
-    "grpc-web": "^1.5.0",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
