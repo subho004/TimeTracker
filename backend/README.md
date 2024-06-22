@@ -16,3 +16,11 @@ uvicorn main:app --host 0.0.0.0
 uvicorn main:app --host 0.0.0.0 --reload
 
 python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. timeseries.proto
+
+# To test
+
+after activating venv and installing requirements do
+
+-> python server.py
+
+-> python client.py
