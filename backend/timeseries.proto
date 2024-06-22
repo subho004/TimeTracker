@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package timeseries;
+
+message StreamRequest {
+  int64 start_timestamp = 1;
+  int64 end_timestamp = 2;
+  int32 limit = 3;
+}
+
+message TimeSeriesData {
+  int32 id = 1;
+  float time = 2;
+  float EEG_CZ_REF = 3;
+  float EMG_REF = 4;
+  float EEG_28_REF = 5;
+  float EEG_30_REF = 6;
+  float EEG_P4_REF = 7;
+  float EEG_29_REF = 8;
+  float EEG_ROC_REF = 9;
+  float EEG_T2_REF = 10;
+  float EEG_T3_REF = 11;
+  float EEG_O1_REF = 12;
+  float SUPPR = 13;
+  float EEG_P3_REF = 14;
+  float EEG_FZ_REF = 15;
+  float EEG_F8_REF = 16;
+  float EEG_27_REF = 17;
+  float EEG_A1_REF = 18;
+  float IBI = 19;
+  float BURSTS = 20;
+  float EEG_F4_REF = 21;
+  float EEG_EKG1_REF = 22;
+  float EEG_LOC_REF = 23;
+  float EEG_T1_REF = 24;
+  float EEG_T4_REF = 25;
+  float EEG_C4_REF = 26;
+  float EEG_26_REF = 27;
+  float EEG_T5_REF = 28;
+  float EEG_A2_REF = 29;
+  float EEG_FP2_REF = 30;
+  float EEG_FP1_REF = 31;
+  float EEG_F3_REF = 32;
+  float EEG_T6_REF = 33;
+  float EEG_PZ_REF = 34;
+  float PHOTIC_REF = 35;
+  float EEG_F7_REF = 36;
+  float EEG_O2_REF = 37;
+}
+
+service TimeSeriesService {
+  rpc StreamTimeSeriesData(StreamRequest) returns (stream TimeSeriesData);
+}
