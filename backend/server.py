@@ -8,7 +8,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # Configure the database URL
-DATABASE_URL = "postgresql://postgres:vengeance004@localhost:5433/postgres"
+DATABASE_URL = "postgresql://postgres:mysecretpassword@localhost:5433/postgres"
 
 # Create SQLAlchemy engine, base class, and session maker
 engine = create_engine(DATABASE_URL)

@@ -9,7 +9,7 @@ import logging
 from timeseries_pb2 import TimeSeriesData as ProtoTimeSeriesData, StreamRequest
 from timeseries_pb2_grpc import TimeSeriesServiceServicer, add_TimeSeriesServiceServicer_to_server
 
-DATABASE_URL = "postgresql://postgres:vengeance004@localhost:5433/postgres"
+DATABASE_URL = "postgresql://postgres:mysecretpassword@localhost:5433/postgres"
 
 engine = create_engine(DATABASE_URL)
 Base = declarative_base()
