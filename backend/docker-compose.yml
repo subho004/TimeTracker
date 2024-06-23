@@ -1,0 +1,29 @@
+version: "3"
+services:
+  timescaledb:
+    image: subho004/timescaledb:latest-pg14
+    command: bash
+    networks:
+      - backend_network
+
+  server:
+    build: .
+    ports:
+      - "50051:50051" # Expose the server's gRPC port
+    depends_on:
+      - timescaledb
+    networks:
+      - backend_network
+    command: python server.py
+
+  client:
+    build: .
+    depends_on:
+      - server
+    networks:
+      - backend_network
+    command: python client.py
+
+networks:
+  backend_network:
+    driver: bridge

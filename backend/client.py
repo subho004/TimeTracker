@@ -9,7 +9,15 @@ SERVER_ADDRESS = 'localhost:50051'
 
 def stream_time_series_data():
     # Establish a connection to the gRPC server
-    channel = grpc.insecure_channel(SERVER_ADDRESS)
+    channel = None
+    while channel is None:
+        try:
+            channel = grpc.insecure_channel(SERVER_ADDRESS)
+            logging.info("Connected to server")
+        except Exception as e:
+            logging.error(f"Failed to connect to server: {e}")
+            time.sleep(1)  # Retry after 1 second
+
     stub = TimeSeriesServiceStub(channel)
 
     # Create a stream for receiving TimeSeriesData messages

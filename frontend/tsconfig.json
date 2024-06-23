@@ -20,7 +20,8 @@
     "src/**/*.tsx",
     "src/generated/**/*.ts",
     "src/App.jsx",
-    "src/services/grpcClient.js"
+    "src/services/grpcClient.js",
+    "src/TimeSeriesChart.jsx"
   ],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

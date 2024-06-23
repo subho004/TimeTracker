@@ -17,6 +17,11 @@ uvicorn main:app --host 0.0.0.0 --reload
 
 python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. timeseries.proto
 
+# run the database image
+
+docker pull subho004/timescaledb:latest-pg14
+docker run -it subho004/timescaledb:latest-pg14 bash
+
 # To test
 
 after activating venv and installing requirements do
